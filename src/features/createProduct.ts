@@ -1,4 +1,5 @@
 import React from 'react'
+import { CreateProductTypes, Faker } from './types'
 
 
 const produktTitle: string[] = [
@@ -10,14 +11,55 @@ const produktTitle: string[] = [
     
 const produktCategories: string [] = ["Console", "Phone"]
 
-const produktPrice: number[] = [3, 2, 1]
+const produktPrice: number[] = [320, 221, 12]
 
 
-
-const createProduct = () => {
-  return (
-    <div>createProduct</div>
-  )
+const getRandomId = () => {
+  return Math.random().toString(36).slice(2)
 }
 
-export default createProduct
+const getRandomItem = <T>(items: T[]) =>{
+  
+  const randomIndex = Math.floor(Math.random() * items.length)
+  
+  return items[randomIndex]
+}
+
+
+export const faker: Faker = {
+  id: () => getRandomId(),
+
+  title: () => getRandomItem(produktTitle),
+
+  price: () => getRandomItem(produktPrice),
+
+  category: () => getRandomItem(produktCategories),
+
+}
+
+
+const createProducts: CreateProductTypes = ({
+  existingProducts,
+  count, 
+  faker
+}) => {
+  const products = new Map(existingProducts)
+
+  if(products.size === 0 && count === 0) {
+    throw new Error("No product added")
+  }
+
+  for(let i = 0; i < count; i++){
+
+    const product = {
+      id: faker.id(),
+      produktTitle: faker.title,
+      price: 
+    }
+  }
+
+
+}
+
+
+export {createProducts}
