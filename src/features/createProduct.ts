@@ -53,13 +53,16 @@ const createProducts: CreateProductTypes = ({
 
     const product = {
       id: faker.id(),
-      produktTitle: faker.title,
-      price: 
+      produktTitle: faker.title(),
+      price: faker.price(),
+      category: faker.category(),
     }
-  }
 
+    products.set(`products-${i}`, product)
+  }
+  return products
 
 }
 
 
-export {createProducts}
+export {createProducts, getRandomId, getRandomItem}
