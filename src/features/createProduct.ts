@@ -7,11 +7,14 @@ const produktTitle: string[] = [
     "XBOX ONE",
     "Iphone 15",
     "Samsung",
+    "yahye",
+    "PC",
+    "Fried Chicken"
 ]
     
-const produktCategories: string [] = ["Console", "Phone"]
+const produktCategories: string [] = ["Console", "Phone", "Food", "People", "Carpet for Isha"]
 
-const produktPrice: number[] = [320, 221, 12]
+const produktPrice: number[] = [320, 221, 12, 345, 222, 1234]
 
 
 const getRandomId = () => {

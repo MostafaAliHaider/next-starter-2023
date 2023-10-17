@@ -5,8 +5,7 @@ import React from 'react'
 
 const Products = ({product}: ProductTypes[]) => {
   return (
-    <div>
-        <h1>test</h1>
+    <>
         {
         
             product?.map((product: ProductTypes) => {
@@ -19,7 +18,9 @@ const Products = ({product}: ProductTypes[]) => {
                 </article>
             })
         }
-    </div>
+    </>
+        
+    
   )
 }
 
